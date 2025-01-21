@@ -35,8 +35,6 @@ Em seguida, temos uma **página HTML** que utiliza **Plotly.js** para ler os arq
   - **source venv/bin/activate (Linux/Mac)**
 - Instalar as dependências através do requirements.txt:
   - **pip install requirements.txt**
-- Instalar a biblioteca requests
-   - **pip install requests**
 - Executar o script Python para baixar e processar os dados:
   - **py app.py**
   - Isso vai gerar ou atualizar os **arquivos retorno_acumulado.json e volatilidade.json**.
