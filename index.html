@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Retorno Acumulado e Volatilidade</title>
-  <!-- Plotly.js via CDN -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   
   <style>
-    /* Centraliza todo o conteúdo da página */
     body {
       text-align: center; 
       font-family: sans-serif; 
@@ -15,7 +13,6 @@
       padding: 0;
     }
 
-    /* Caixa em torno do título */
     h1 {
       display: inline-block;
       padding: 10px 20px;
@@ -24,9 +21,8 @@
       margin-bottom: 30px;
     }
 
-    /* Centraliza as divs dos gráficos e define largura */
     .grafico {
-      margin: 0 auto 40px auto; /* 40px de espaçamento inferior */
+      margin: 0 auto 40px auto; 
       width: 800px;
       height: 400px;
     }
@@ -34,18 +30,14 @@
 </head>
 <body>
 
-  <!-- Título dentro de uma "caixa" -->
   <h1>Gráficos: Retorno Acumulado e Volatilidade</h1>
 
-  <!-- Div para o Gráfico 1 (Retorno Acumulado) -->
   <div id="plotlyRetorno" class="grafico"></div>
 
-  <!-- Div para o Gráfico 2 (Volatilidade) -->
   <div id="plotlyVolatilidade" class="grafico"></div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // 1) Buscar retorno_acumulado.json
       fetch('retorno_acumulado.json')
         .then(response => response.json())
         .then(dataRetorno => {
@@ -67,12 +59,10 @@
             yaxis: { title: 'Soma Cumulativa (%)' }
           };
 
-          // Renderiza no div "plotlyRetorno"
           Plotly.newPlot('plotlyRetorno', [traceRetorno], layoutRetorno);
         })
         .catch(error => console.error('Erro ao carregar retorno_acumulado.json:', error));
 
-      // 2) Buscar volatilidade.json
       fetch('volatilidade.json')
         .then(response => response.json())
         .then(dataVol => {
