@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retorno Acumulado e Volatilidade</title>
+  <!-- Plotly.js via CDN -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+  <style>
+    /* Centraliza todo o conteúdo da página */
+    body {
+      text-align: center; 
+      font-family: sans-serif; 
+      margin: 0; 
+      padding: 0;
+    }
+
+    /* Caixa em torno do título */
+    h1 {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #000;  
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Centraliza as divs dos gráficos e define largura */
+    .grafico {
+      margin: 0 auto 40px auto; /* 40px de espaçamento inferior */
+      width: 800px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título dentro de uma "caixa" -->
+  <h1>Gráficos: Retorno Acumulado e Volatilidade</h1>
+
+  <!-- Div para o Gráfico 1 (Retorno Acumulado) -->
+  <div id="plotlyRetorno" class="grafico"></div>
+
+  <!-- Div para o Gráfico 2 (Volatilidade) -->
+  <div id="plotlyVolatilidade" class="grafico"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1) Buscar retorno_acumulado.json
+      fetch('retorno_acumulado.json')
+        .then(response => response.json())
+        .then(dataRetorno => {
+          const datasRetorno = dataRetorno.map(item => item.data);
+          const valoresRetorno = dataRetorno.map(item => item.cumulative_return);
+
+          const traceRetorno = {
+            x: datasRetorno,
+            y: valoresRetorno,
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Retorno Acumulado',
+            line: { color: 'blue' }
+          };
+
+          const layoutRetorno = {
+            title: 'Retorno Acumulado',
+            xaxis: { title: 'Data' },
+            yaxis: { title: 'Soma Cumulativa (%)' }
+          };
+
+          // Renderiza no div "plotlyRetorno"
+          Plotly.newPlot('plotlyRetorno', [traceRetorno], layoutRetorno);
+        })
+        .catch(error => console.error('Erro ao carregar retorno_acumulado.json:', error));
+
+      // 2) Buscar volatilidade.json
+      fetch('volatilidade.json')
+        .then(response => response.json())
+        .then(dataVol => {
+          const datasVol = dataVol.map(item => item.data);
+          const valoresVol = dataVol.map(item => item.desvio_padrao);
+
+          const traceVol = {
+            x: datasVol,
+            y: valoresVol,
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Volatilidade (Desvio Padrão)',
+            line: { color: 'red' }
+          };
+
+          const layoutVol = {
+            title: 'Volatilidade ao longo do tempo (em janelas de 21 dias)',
+            xaxis: { title: 'Data' },
+            yaxis: { title: 'Desvio Padrão' }
+          };
+
+          Plotly.newPlot('plotlyVolatilidade', [traceVol], layoutVol);
+        })
+        .catch(error => console.error('Erro ao carregar volatilidade.json:', error));
+    });
+  </script>
+</body>
+</html>
