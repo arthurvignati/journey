@@ -30,10 +30,10 @@ Em seguida, temos uma **página HTML** que utiliza **Plotly.js** para ler os arq
 # 3. Passo a Passo de Execução
 - Clonar ou baixar este repositório.
 - Criar ambiente virtual:
-  **python -m venv venv**
-  **venv\Scripts\activate (Windows)**
-  ou
-  **source venv/bin/activate (Linux/Mac)**
+  - **python -m venv venv**
+  - **venv\Scripts\activate (Windows)**
+  - ou
+  - **source venv/bin/activate (Linux/Mac)**
 - Instalar as dependências através do requirements.txt:
   - **pip install requirements.txt**
 - Instalar a biblioteca requests
