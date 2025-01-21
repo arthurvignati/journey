@@ -28,20 +28,28 @@ Em seguida, temos uma **página HTML** que utiliza **Plotly.js** para ler os arq
 
 
 # 3. Passo a Passo de Execução
-Clonar ou baixar este repositório.
-Criar ambiente virtual e instalar dependências
-  python -m venv venv
-  venv\Scripts\activate (Windows)
+- Clonar ou baixar este repositório.
+- Criar ambiente virtual:
+  **python -m venv venv**
+  **venv\Scripts\activate (Windows)**
   ou
-  source venv/bin/activate (Linux/Mac)
-  pip install requests
-Executar o script Python para baixar e processar os dados:
-  py app.py
-  Isso vai gerar ou atualizar os arquivos retorno_acumulado.json e volatilidade.json.
-Iniciar um servidor local para servir a página HTML:
-  python -m http.server 8000
-Abrir o navegador em http://localhost:8000/index.html para visualizar os gráficos.
+  **source venv/bin/activate (Linux/Mac)**
+- Instalar as dependências através do requirements.txt:
+  - **pip install requirements.txt**
+- Instalar a biblioteca requests
+   - **pip install requests**
+- Executar o script Python para baixar e processar os dados:
+  - **py app.py**
+  - Isso vai gerar ou atualizar os arquivos retorno_acumulado.json e volatilidade.json.
+- Iniciar um servidor local para servir a página HTML:
+  - **python -m http.server 8000**
+- Abrir o navegador em http://localhost:8000/index.html para visualizar os gráficos.
 
+# 4. Visualização 
+
+- Após iniciar o servidor e acessar a página, você deve ver dois gráficos interativos:
+1. **Retorno Acumulado**
+2. **Volatilidade ao longo do tempo**
 
 ![image](https://github.com/user-attachments/assets/24e7bcd2-94b8-4cc3-b531-55278b61648c)
 ![image](https://github.com/user-attachments/assets/9967338b-20e3-49dd-9858-179fbd02a194)
