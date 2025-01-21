@@ -32,7 +32,6 @@ Em seguida, temos uma **página HTML** que utiliza **Plotly.js** para ler os arq
 - Criar ambiente virtual:
   - **python -m venv venv**
   - **venv\Scripts\activate (Windows)**
-  - ou
   - **source venv/bin/activate (Linux/Mac)**
 - Instalar as dependências através do requirements.txt:
   - **pip install requirements.txt**
