@@ -19,12 +19,12 @@ Em seguida, temos uma **página HTML** que utiliza **Plotly.js** para ler os arq
 - Um gráfico para **Volatilidade** (média dos desvios padrão) ao longo do tempo.
 
 # 2. Pré Requisitos
-Python 3.8+ (ou similar)
-Biblioteca Requests (para fazer a requisição à API)
-Instale via pip install requests
-Recomendo a utilização de um ambiente virtual venv.
-Um servidor local (ou outro ambiente) para servir o index.html e permitir o fetch dos JSON, por exemplo:
- python -m http.server 8000
+- **Python 3.8+** (ou superior)
+- Biblioteca Requests (para fazer a requisição à API)
+- Instale via pip install requests
+- Recomendo a utilização de um ambiente virtual venv.
+- Um servidor local (ou outro ambiente) para servir o index.html e permitir o fetch dos JSON, por exemplo:
+  - **python -m http.server 8000**
 
 
 # 3. Passo a Passo de Execução
