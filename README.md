@@ -39,7 +39,7 @@ Em seguida, temos uma **página HTML** que utiliza **Plotly.js** para ler os arq
    - **pip install requests**
 - Executar o script Python para baixar e processar os dados:
   - **py app.py**
-  - Isso vai gerar ou atualizar os arquivos retorno_acumulado.json e volatilidade.json.
+  - Isso vai gerar ou atualizar os **arquivos retorno_acumulado.json e volatilidade.json**.
 - Iniciar um servidor local para servir a página HTML:
   - **python -m http.server 8000**
 - Abrir o navegador em http://localhost:8000/index.html para visualizar os gráficos.
